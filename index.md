@@ -104,18 +104,7 @@ reduce the support and maintenance load.
 
 ## Where can I get it?
 
-1. Grab the [most recent package][builds].
-
-   * The last build to support OS X 10.6 Snow Leopard is
-     [GitX-dev 0.14.81][dmgsl]. Please see
-     [my notes on Snow Leopard support in GitX](#os-x-106-snow-leopard-support).
-
-2. Click the *"Check for updates..."* item in the GitX menu. New builds are
-   available through in-app update.
-
-GitX-dev uses the [Sparkle][sparkle] framework for in-app updates; so once you
-have version 0.11 or later, you can check for or update to new builds from the
-GitX menu at any time, or opt-in for automatic updates.
+Grab the [most recent package][builds]. The last build is [GitX-dev 0.17][dmgsl].
 
 # Development
 
@@ -160,46 +149,3 @@ are not a programmer you can do useful things. A short selection:
 
 * Give feedback
 * File [bug reports][bug] and [feature requests][rfe]
-
-## OS X 10.6 Snow Leopard support
-
-I haven't had the ability to test on 10.6 since 2011; GitX support has been
-maintained until mid 2013 by virtue of timely bug reports and relatively simple
-fixes, but the aggregate support weight to continue targeting 10.6 now exceeds
-my threshold for how much I'm willing to jeopardize further feature and
-performance development.
-
-If you'd like to see GitX continue to support OS X 10.6, you are most welcome
-to fork from the [10.6_snow_leopard][treesl] branch I have published on GitHub
-as a starting point.
-
-Regrettably, although I feel the pain of being stranded on an old version, I am
-not interested in continuing to support 10.6; I will outline the main reasons
-for this here.
-
-* OS X 10.6 does not support ARC `weak` references, complicating memory
-  management
-
-* [Objective-Git][objectivegit] no longer supports 10.6 (and is phasing in the
-  use of `weak` references)
-
-* *Objective-Git* is presently introducing features like an SSH remote
-  transport, which will allow us to further dramatically reduce reliance on
-  parsing command-line output of 'git' commands. This and other new features,
-  along with their usual stream of bug fixes and performance improvements is a
-  substantial reason to not freeze on an old version to continue to support
-  10.6.
-
-* OS X 10.6 does not support XPC services at all, and these are one of my main
-  avenues of exploration for further increasing performance and
-  reliability.
-
-* Many Snow Leopard users seem to be running hardware that can be upgraded to
-  10.7 or higher (we've only built for 64-bit Intel for over a year), and have
-  just chosen not to do so. I'm not saying that your choice isn't valid, but it
-  is a choice.
-
-* If I can't test on 10.6, and I break compatibility in an update, it's broken
-  for all 10.6 users until somebody reports it and typically until I fix it. I
-  think that's a much worse experience for those 10.6 users than running an old
-  but functional and stable build.
