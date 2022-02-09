@@ -3,7 +3,7 @@ layout: default
 ---
 [gitx]:    http://gitx.frim.nl/
 [git]:     https://git-scm.com/
-[dmgsl]:   http://builds.phere.net/GitX/development/GitX-dev-81.dmg
+[dmgsl]:   https://github.com/gitx/gitx/releases/download/0.17/GitX.built.by.Xcode_13.2.1.dmg
 [commits]: https://github.com/gitx/gitx/commits/master
 [builds]:  https://github.com/gitx/gitx/releases
 [bug]:     https://github.com/gitx/gitx/issues?labels=bug
