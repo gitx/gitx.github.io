@@ -5,7 +5,7 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         {% for release in site.github.releases %}
-            {% if release.prerelease and page.prereleases %}{% break %}{% endif %}
+            {% if release.prerelease and !page.include_prereleases %}{% continue %}{% endif %}
             {% assign tag_name = release.tag_name %}
             {% assign release_prefix = "v/" %}
             {% unless release.tag_name contains release_prefix %}{% continue %}{% endunless %}
