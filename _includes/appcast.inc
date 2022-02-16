@@ -6,11 +6,19 @@
         <language>en</language>
         {% for release in site.github.releases %}
             {% if release.prerelease and !page.include_prereleases %}{% continue %}{% endif %}
-            {% assign tag_name = release.tag_name %}
+
+            {% comment %}
+            <!--
+                This was all related to the "new" build system referenced in
+                c6891a8e (ca 2018) and seems to want to parse tags like v/0.17.
+            -->
             {% assign release_prefix = "v/" %}
             {% unless release.tag_name contains release_prefix %}{% continue %}{% endunless %}
             {% assign version_nums = release.tag_name | remove_first: release_prefix | split: '/' %}
             {% assign version = version_nums[1] %}
+            {% endcomment %}
+
+            {% assign version = release.tag_name %}
             {% assign short_version = nil %}
 
             {% assign dmg_sign = nil %}
