@@ -4,6 +4,3 @@ description: "an open source Git GUI for Mac OS X"
 baseurl: ""
 markdown: kramdown
 permalink: pretty
-
-# Which project should {{ site.github.* }} refer to?
-repository: gitx/gitx
