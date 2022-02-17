@@ -1,4 +1,0 @@
----
-include_prereleases: false
----
-{%include appcast.inc %}
